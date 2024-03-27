@@ -1,15 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
+import Slide1 from "./pages/slide1";
 
 function App() {
   return (
-    <div>
-      <h1>React App</h1>
-
+    <>
       <Routes>
-        <Route path="/"  element={<Login/>} />
+        <Route path="/"  element={<Slide1/>} />
       </Routes>
-    </div>
+    </>
   );
 }
 
