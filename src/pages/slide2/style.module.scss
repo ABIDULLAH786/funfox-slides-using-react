@@ -1,0 +1,138 @@
+.container {
+    padding: 20px;
+    height: auto;
+
+    .paragraph1 {
+        color: #1E242F;
+        font-family: "Short Stack";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: -1.44px;
+
+        padding-top: 10px;
+    }
+
+    .sentence {
+        color: #1E242F;
+        font-family: "Short Stack";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: -1.44px;
+        padding-top: 10px;
+    }
+    .normal_text {
+        color: #1E242F;
+        font-family: "Short Stack";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: -1.44px;
+        padding-top: 10px;
+    }
+
+    .images_wrapper {
+        display: flex;
+        justify-content: space-evenly;
+
+        .left_img {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .right_img {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                border-radius: 12px;
+                border: 4px dashed #CCCCCC;
+                padding: 16px 32px;
+                box-sizing: border-box;
+                width: 230px;
+            }
+
+        }
+
+        .img_caption {
+            color: #000;
+            text-align: center;
+            font-family: "Short Stack";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 300px;
+            padding-top: 5px;
+        }
+    }
+
+    .suggestion_wrapper {
+        .guess_txt {
+            color: #1E242F;
+            font-family: "Short Stack";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 29px;
+            /* 145% */
+        }
+
+        .suggestion_container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .guess_dotted_area {
+                // layout
+                border-radius: 12px;
+                border: 4px dashed #CCCCCC;
+                padding: 5px;
+                padding-inline: 15px;
+
+                box-sizing: border-box;
+
+                // text
+                color: #B6B6B6;
+                font-family: "Short Stack";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+            }
+
+            .guess_hint_wrapper {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+            }
+        }
+    }
+
+    .paragraph2 {
+        display: flex;
+        border-radius: 5px;
+        border: 3px dashed #A4FDFB;
+        background: #25A3A1;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin-top: 20px;
+        padding: 10px;
+
+        .p2_text {
+            color: #FFF;
+            font-family: "Short Stack";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 33px;
+        }
+    }
+}
