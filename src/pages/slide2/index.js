@@ -14,13 +14,12 @@ function Slide2() {
                 </div>
                 <div className={styles.images_wrapper}>
                     <div className={styles.left_img}>
-                        <img src='images/slide2/beach.svg' />
-                        <div className={styles.img_caption}>Sunny day at a beach </div>
+                        <ImageCard src="images/slide2/beach.svg" caption="Sunny day at a beach" />
                     </div>
                     <div className={styles.right_img}>
-                        <img src='images/slide2/night_house.svg' />
-                        <div className={styles.img_caption}>A cold rainy night in a haunted house in October</div>
+                        <ImageCard src="images/slide2/night_house.svg" caption="A cold rainy night in a haunted house in October" />
                     </div>
+
                 </div>
                 <div className={styles.suggestion_wrapper}>
                     <div className={styles.guess_txt}>So, what do you think the definition of setting is?</div>
@@ -34,6 +33,7 @@ function Slide2() {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.paragraph2}>
                     <div className={styles.p2_text}>
                         Setting is the time <img src='images/slide2/clock.svg' width={34} /> and place <img src='images/slide2/home.svg' width={34} /> of a story. It often answers the questions: when? and where?</div>
@@ -47,5 +47,12 @@ function Slide2() {
         </SlideContainer>
     )
 }
-
+function ImageCard({ src, caption }) {
+    return (
+        <>
+            <img src={src} alt="image" />
+            <div className={styles.img_caption}>{caption}</div>
+        </>
+    );
+}
 export default Slide2
