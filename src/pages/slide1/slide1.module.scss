@@ -1,0 +1,128 @@
+// Defined a mixin for common text styles
+@mixin text-styles {
+    color: #1E242F;
+    font-family: "Short Stack";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.container {
+    padding: 20px;
+    height: auto;
+
+    .heading {
+        width: 529px;
+        height: 50px;
+        flex-shrink: 0;
+        background-color: #FE6784;
+        filter: drop-shadow(0px 0px 11.048px rgba(0, 0, 0, 0.25));
+        border: 3.3px dashed #FFAEBE;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .text {
+            @include text-styles;
+            color: #FFF;
+            text-align: center;
+            line-height: 35px;
+        }
+    }
+
+    .paragraph1,
+    .paragraph3 {
+        @include text-styles;
+        letter-spacing: -1.44px;
+        padding-top: 10px;
+    }
+
+    // Define specific styles for paragraph2
+    .paragraph2 {
+        display: flex;
+        border-radius: 5px;
+        border: 3px dashed #A4FDFB;
+        background: #25A3A1;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin-top: 20px;
+        padding: 10px;
+        position: relative;
+        min-height: 100px;
+
+        .p2_text {
+            @include text-styles;
+            color: #FFF;
+            font-size: 24px;
+            line-height: 29px;
+            padding-right: 127px;
+        }
+
+        img {
+            position: absolute;
+            right: 0;
+            top: -2px;
+            width: 110.705px;
+            height: 131.298px;
+            padding-right: 17px;
+        }
+    }
+
+    // Apply common cloud container styles using the placeholder
+    .clouds_wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 20px;
+        padding-bottom: 20px;
+        padding-top: 40px;
+
+        .cloud_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .cloud_text {
+                z-index: 1;
+                width: 120px;
+                @include text-styles;
+                color: #000;
+                text-align: center;
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            img {
+                position: absolute;
+            }
+        }
+    }
+
+    .paragraph4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: #FE6784;
+        box-shadow: 0px 8px 2px 0px rgba(0, 0, 0, 0.25);
+        position: relative;
+        height: 133px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .p4_text {
+            @include text-styles;
+            color: #1E242F;
+            width: 931px;
+            height: 87px;
+            flex-shrink: 0;
+            margin: auto;
+            z-index: 1;
+        }
+
+        img {
+            position: absolute;
+        }
+    }
+}

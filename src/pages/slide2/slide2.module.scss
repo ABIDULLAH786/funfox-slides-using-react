@@ -1,0 +1,112 @@
+// Define a mixin for common text styles
+@mixin text-styles {
+    color: #1E242F;
+    font-family: "Short Stack";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -1.44px;
+}
+
+
+.container {
+    padding: 20px;
+    height: auto;
+
+
+    .sentence,
+    .normal_text {
+        @include text-styles;
+        padding-top: 10px;
+    }
+
+    .paragraph1 {
+        @include text-styles;
+        font-size: 32px;
+        line-height: normal;
+    }
+
+    .img_caption {
+        @include text-styles;
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+        line-height: normal;
+        width: 300px;
+        padding-top: 5px;
+    }
+
+    //    images style
+    .left_img,
+    .right_img {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .right_img img {
+        border-radius: 12px;
+        border: 3.8px dashed #CCCCCC;
+        padding: 16px 32px;
+        box-sizing: border-box;
+        width: 230px;
+    }
+
+    .images_wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 5px;
+    }
+
+    .suggestion_wrapper {
+        .guess_txt {
+            @include text-styles;
+            color: #1E242F;
+            padding-block: 15px;
+        }
+
+        .suggestion_container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .guess_dotted_area {
+                @include text-styles;
+                color: #B6B6B6;
+
+                border-radius: 12px;
+                border: 4px dashed #CCCCCC;
+                padding: 3px;
+                padding-inline: 15px;
+                box-sizing: border-box;
+            }
+
+            .guess_hint_wrapper {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+
+    .paragraph2 {
+        display: flex;
+        border-radius: 5px;
+        border: 3px dashed #A4FDFB;
+        background: #25A3A1;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin-top: 10px;
+        padding: 7px 10px;
+
+        .p2_text {
+            color: #FFF;
+            font-family: "Short Stack";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 33px;
+        }
+    }
+}

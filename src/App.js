@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
-
+import Slide1 from "./pages/slide1";
+import './global.scss'
+import Slide2 from "./pages/slide2";
 function App() {
   return (
-    <div>
-      <h1>React App</h1>
-
+    <>
       <Routes>
-        <Route path="/"  element={<Login/>} />
+        <Route path="/" element={<Slide1 />} />
+        <Route path="/2" element={<Slide2 />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
