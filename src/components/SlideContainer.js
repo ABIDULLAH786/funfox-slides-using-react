@@ -4,39 +4,42 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 function SlideContainer({ children }) {
     const [slideNumber, setSlideNumber] = useState(1)
-    const totalPages = useRef(2);
+    const totalSlides = useRef(2);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(totalPages)
-    const handlePageSelect = (event) => {
-        visitPage(event.target.value)
+    const handleSlideSelect = (event) => {
+        visitSlide(event.target.value)
         setSlideNumber(event.target.value);
     };
     useEffect(() => {
-        const page = location.pathname == '/' ? 1 : location.pathname.split("/")[1];
-        setSlideNumber(page);
+        const slide = location.pathname == '/' ? 1 : location.pathname.split("/")[1];
+        setSlideNumber(slide);
     }, [location.pathname]);
 
     const handleArrowButtonClick = (direction) => {
         if (direction === 'previous') {
-            const page = slideNumber - 1;
-            visitPage(page)
+            const slide = slideNumber - 1;
+            visitSlide(slide)
         } else if (direction === 'next') {
             navigate(`/${parseInt(slideNumber) + 1}`);
         }
     };
-    const visitPage = (page) => {
-        if (page == 1) {
+    const visitSlide = (slide) => {
+        if (slide == 1) {
             navigate(`/`);
-        } else if (page <= totalPages.current) {
-            navigate(`/${page}`);
+        } else if (slide <= totalSlides.current) {
+            navigate(`/${slide}`);
         }
     }
     return (
         <div className={styles.slide_container}>
             <div className={styles.content_wrapper}>
                 <div className={styles.header}>
-                    <img src='images/slide1/funfox-logo.png' alt='logo' />
+                    <img className={styles.logo} src='images/slide1/funfox-logo.png' alt='logo' />
+                    {slideNumber == 1 && <div className={styles.week_label_wrapper}>
+                        <div className={styles.week_text}>Week1</div>
+                        <img src='images/slide1/weeklabel.svg' alt='week1' />
+                    </div>}
                 </div>
                 <div className={styles.body}>
                     <div className={styles.left_side_icons_container}>
@@ -62,15 +65,16 @@ function SlideContainer({ children }) {
                             onClick={() => handleArrowButtonClick('previous')}
                             style={{ opacity: slideNumber === 1 ? 0.5 : 1, pointerEvents: slideNumber === 1 ? 'none' : 'auto' }}
                         />
-                        <select value={slideNumber} onChange={handlePageSelect}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                        <select value={slideNumber} onChange={handleSlideSelect}>
+                            {[...Array(totalSlides.current).keys()].map((page) => (
+                                <option key={page + 1} value={page + 1}>
+                                    {page + 1}
+                                </option>
+                            ))}
                         </select>
-                        {console.log("TOTAL: "+ totalPages.current)}
-                        {console.log("CURR: "+ slideNumber)}
                         <img src='images/arrow-right.svg' width={30}
                             onClick={() => handleArrowButtonClick('next')}
-                            style={{ opacity: slideNumber == totalPages.current ? 0.5 : 1, pointerEvents: slideNumber === totalPages.current ? 'none' : 'auto' }}
+                            style={{ opacity: slideNumber == totalSlides.current ? 0.5 : 1, pointerEvents: slideNumber === totalSlides.current ? 'none' : 'auto' }}
                         />
                     </div>
                     <img src='images/slide1/info.png' alt='book icon' />

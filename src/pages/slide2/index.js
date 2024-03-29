@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./style.module.scss"
+import styles from "./slide2.module.scss"
 import SlideContainer from '../../components/SlideContainer'
 function Slide2() {
     return (

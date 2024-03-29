@@ -3,6 +3,7 @@ $color-white: #fff;
 
 .slide_container {
     width: 100%;
+    min-width: max-content;
     height: 100%;
     min-height: 100dvh;
 
@@ -17,11 +18,43 @@ $color-white: #fff;
 
         .header {
             position: relative;
+            display: flex;
+            justify-content: flex-start;
 
-            img {
+            .logo {
                 position: absolute;
             }
+
+            .week_label_wrapper {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                top: 32px;
+                left: 220px;
+
+                .week_text {
+                    color: #FFF;
+                    -webkit-text-stroke-width: 1.2px;
+                    -webkit-text-stroke-color: #AA1070;
+                    font-family: "Short Stack";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    display: block;
+                    z-index: 1;
+                    position: absolute;
+                }
+
+                img {
+                    position: absolute;
+                }
+            }
+
         }
+
+
 
         .body {
             display: flex;
@@ -54,8 +87,8 @@ $color-white: #fff;
 
         .footer {
 
-            padding: 12px 35px;
-
+            // padding: 12px 35px;
+            padding: 12px 60px 12px 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
