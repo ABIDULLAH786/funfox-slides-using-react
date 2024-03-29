@@ -7,7 +7,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Slide1 />} />
-        <Route path="/slide2" element={<Slide2 />} />
+        <Route path="/2" element={<Slide2 />} />
       </Routes>
     </>
   );
