@@ -23,7 +23,7 @@ function Slide2() {
                     </div>
                 </div>
                 <div className={styles.suggestion_wrapper}>
-                    <p className={styles.guess_txt}>So, what do you think the definition of setting is?</p>
+                    <div className={styles.guess_txt}>So, what do you think the definition of setting is?</div>
                     <div className={styles.suggestion_container}>
                         <div className={styles.guess_txt}>Any guesses?</div>
                         <div className={styles.guess_dotted_area}>________________________________________</div>
@@ -36,7 +36,7 @@ function Slide2() {
                 </div>
                 <div className={styles.paragraph2}>
                     <div className={styles.p2_text}>
-                        TSetting is the time <img src='images/slide2/clock.svg' width={34} /> and place <img src='images/slide2/home.svg' width={34} /> of a story. It often answers the questions: when? and where?</div>
+                        Setting is the time <img src='images/slide2/clock.svg' width={34} /> and place <img src='images/slide2/home.svg' width={34} /> of a story. It often answers the questions: when? and where?</div>
                 </div>
                 <div className={styles.normal_text}>
                     The time of the story could be in the past, future, day, night, summer or winter.

@@ -62,8 +62,8 @@ function SlideContainer({ children }) {
                     <img src='images/slide1/voice.png' alt='book icon' />
                     <div className={styles.center_page_num_container}>
                         <img src='images/arrow-left.svg' width={30}
-                            onClick={() => handleArrowButtonClick('previous')}
-                            style={{ opacity: slideNumber === 1 ? 0.5 : 1, pointerEvents: slideNumber === 1 ? 'none' : 'auto' }}
+                            onClick={() => { parseInt(slideNumber) !== 1 && handleArrowButtonClick('previous') }}
+                            style={{ opacity: slideNumber === 1 ? 0.5 : 1, cursor: slideNumber == 1 ? "not-allowed" : "pointer" }}
                         />
                         <select value={slideNumber} onChange={handleSlideSelect}>
                             {[...Array(totalSlides.current).keys()].map((page) => (
@@ -73,8 +73,8 @@ function SlideContainer({ children }) {
                             ))}
                         </select>
                         <img src='images/arrow-right.svg' width={30}
-                            onClick={() => handleArrowButtonClick('next')}
-                            style={{ opacity: slideNumber == totalSlides.current ? 0.5 : 1, pointerEvents: slideNumber === totalSlides.current ? 'none' : 'auto' }}
+                            onClick={() => { parseInt(slideNumber) !== totalSlides.current && handleArrowButtonClick('next') }}
+                            style={{ opacity: slideNumber == totalSlides.current ? 0.5 : 1, cursor: slideNumber == totalSlides.current ? "not-allowed" : "pointer", pointerEvents: slideNumber === totalSlides.current ? 'none' : 'auto' }}
                         />
                     </div>
                     <img src='images/slide1/info.png' alt='book icon' />
