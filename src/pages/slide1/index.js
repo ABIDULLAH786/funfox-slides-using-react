@@ -1,6 +1,29 @@
 import React from 'react'
 import styles from "./slide1.module.scss"
 import SlideContainer from '../../components/SlideContainer'
+
+const cloud_text = [
+    {
+        text: "SETTING",
+        img_src: "images/slide1/clouds/cloud_1.svg"
+    },
+    {
+        text: "CHARACTERS",
+        img_src: "images/slide1/clouds/cloud_2.svg"
+    },
+    {
+        text: "PLOT",
+        img_src: "images/slide1/clouds/cloud_3.svg"
+    },
+    {
+        text: "PROBLEM OR CONFLICT",
+        img_src: "images/slide1/clouds/cloud_4.svg"
+    },
+    {
+        text: "RESOLUTION",
+        img_src: "images/slide1/clouds/cloud_5.svg"
+    },
+]
 function Slide1() {
     return (
         <SlideContainer>
@@ -21,28 +44,7 @@ function Slide1() {
                     <img src='images/girl_avatar.svg' />
                 </div>
                 <div className={styles.clouds_wrapper}>
-                    <div className={styles.cloud_container}>
-                        <div className={styles.cloud_text}>SETTING</div>
-                        <img src='images/slide1/clouds/cloud_1.svg' />
-                    </div>
-                    <div className={styles.cloud_container}>
-                        <div className={styles.cloud_text}>CHARACTERS</div>
-                        <img src='images/slide1/clouds/cloud_2.svg' />
-                    </div >
-                    <div className={styles.cloud_container}>
-                        <div className={styles.cloud_text}>PLOT</div>
-                        <img src='images/slide1/clouds/cloud_3.svg' />
-                    </div>
-                    <div className={styles.cloud_container}>
-                        <div className={styles.cloud_text}>PROBLEM
-                            OR
-                            CONFLICT</div>
-                        <img src='images/slide1/clouds/cloud_4.svg' />
-                    </div >
-                    <div className={styles.cloud_container}>
-                        <div className={styles.cloud_text}>RESOLUTION</div>
-                        <img src='images/slide1/clouds/cloud_5.svg' />
-                    </div>
+                    {cloud_text?.map((item, index) => <CloudComponent key={index} text={item.text} imageSrc={item.img_src} />)}
                 </div>
                 <div className={styles.paragraph3}>
                     You must be familiar with some of these. If not, do not worry! we will cover all these elements as we go along.
@@ -58,5 +60,12 @@ function Slide1() {
         </SlideContainer>
     )
 }
-
+const CloudComponent = ({ key, text, imageSrc }) => {
+    return (
+        <div key={key} className={styles.cloud_container}>
+            <div className={styles.cloud_text}>{text}</div>
+            <img src={imageSrc} alt="cloud" />
+        </div>
+    );
+};
 export default Slide1
