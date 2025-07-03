@@ -1,3 +1,14 @@
+## Presentation Desing
+
+Demo: https://funfox-slides-using-react.vercel.app/2
+
+Repo: https://github.com/ABIDULLAH786/funfox-slides-using-react
+
+![screencapture-funfox-slides-using-react-vercel-app-2-2025-07-03-04_30_22](https://github.com/user-attachments/assets/9487264d-e225-4b1b-bf42-fb835ef928d5)
+
+
+---------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
